@@ -7,18 +7,6 @@ import { getTodos , addTodo, putTodo, deleteTodo} from './actions/todos';
 
 
 
-let currentId = 0
-function generateId(){
-  currentId +=1
-  return currentId
-}
-// const todos = [
-//   {id:generateId(),completed:false,description:'laundry'},
-//   {id:generateId(),completed:false,description:'feed the dog'},
-//   {id:generateId(),completed:false,description:'do you homework'},
-//   {id:generateId(),completed:false,description:'learn how to be the best'},
-//   {id:generateId(),completed:false,description:'be the best'},
-// ]
 function App() {
   const [todo,setTodo] = useState('')
   const [todos, setTodos] = useState([])
@@ -33,13 +21,16 @@ function App() {
     })
   }
   const postTodo = (evt) => {
-    addTodo(todo)
-    .then(() => {
-      getData()
-      setTodo('')
-      
-    })
+    if(todo !== ''){
+      addTodo(todo)
+      .then(() => {
+        getData()
+        setTodo('')
+    }) 
     .catch(err => console.log(err.response))
+    }else{
+     alert("you can not submit an empty todo")
+    }
   }
 
   const completeTodo = (todo) => {
