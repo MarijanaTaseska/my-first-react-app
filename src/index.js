@@ -8,7 +8,6 @@ import { sendToVercelAnalytics } from './vitals';
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
-// Render the App component inside the root element
 root.render(
   <React.StrictMode>
     <App />
