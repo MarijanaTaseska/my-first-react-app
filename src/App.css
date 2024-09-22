@@ -6,13 +6,12 @@ html, body, #root {
 .App {
   background-color: #000000;
   height: 100vh;
-  padding: 20px;
   background-image: url(./images/mountainSky.jpg);
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
-  
+  padding:20px;
 }
 
 .Header {
@@ -26,8 +25,8 @@ html, body, #root {
   align-items: center;
   color: white;
   overflow: hidden;
-  margin: 10px;
   width: 100%;
+  margin-bottom: 5px;
 }
 .Header::before {
   content: '';
@@ -80,8 +79,8 @@ html, body, #root {
   align-items: center;
   color: white;
   overflow: hidden;
-  margin: 10px;
   width: 100%;
+  margin-top: 5px;
 }
 .Footer::before {
   content: '';
@@ -99,7 +98,6 @@ html, body, #root {
   z-index: 2; /* Keeps the nav and links on top of the overlay */
 }
 
-/* Style the navigation links */
 .Footer nav a {
   color: rgb(220, 216, 216);
   text-decoration: none;
