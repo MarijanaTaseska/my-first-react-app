@@ -3,7 +3,9 @@ import React from "react";
 const Content = () => {
 
     return (
-<div></div>
+<div>
+    <p>this will be the main content braging about myself</p>
+</div>
     )
 }
 

@@ -1,12 +1,14 @@
 import React from 'react';
-//import Header from './components/Header';
-
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Content from './components/Content';
+import './App.less'
 function App() {
   return (
     <div className="App">
-    <p>ok here is something from me</p>
-    <h1>Welcome to My React App</h1>
-    <p>This is a simple React application!</p>
+      <Header />
+      <Content />
+      <Footer />
   </div>
 
 );
