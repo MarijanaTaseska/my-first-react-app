@@ -7,29 +7,104 @@ html, body, #root {
   background-color: #000000;
   height: 100vh;
   padding: 20px;
+  background-image: url(./images/mountainSky.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 .Header {
-  background-color: #383737;
-  padding: 10px;
+  position: relative; 
+  background-image: url(./images/canyonSky.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 15vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
-  text-align: center;
+  overflow: hidden;
+  margin: 10px;
+  width: 100%;
+}
+.Header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Black overlay with 50% transparency */
+  z-index: 1;
+}
+.Header nav {
+  position: relative;
+  z-index: 2; /* Keeps the nav and links on top of the overlay */
+}
+
+/* Style the navigation links */
+.Header nav a {
+  color: rgb(220, 216, 216);
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+}
+.Header h1 {
+  position: relative;
+  z-index: 2; /* Keeps the text on top of the overlay */
 }
 
 .Content {
-  background-color: #260362;
-  flex: 1;
+  flex: 1; /* Content will take up the remaining space */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center content both horizontally and vertically */
+  background-color: #ffffff;
   padding: 20px;
-  margin: 10px 0;
-  color: white;
-  /* background-image: ; */
+  background-image: url(./images/universePurpleVertical.jpg);
+  background-position: center;
+  background-size: cover;
+ 
 }
 
 .Footer {
-  background-color:  #383737;;
-  padding: 10px;
+  position: relative;
+  background-image: url(./images/canyonSky.jpg);
+  background-size: cover; 
+  background-position: center;
+  height: 15vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
-  text-align: center;
+  overflow: hidden;
+  margin: 10px;
+  width: 100%;
+}
+.Footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Black overlay with 50% transparency */
+  z-index: 1;
+}
+
+.Footer nav {
+  position: relative;
+  z-index: 2; /* Keeps the nav and links on top of the overlay */
+}
+
+/* Style the navigation links */
+.Footer nav a {
+  color: rgb(220, 216, 216);
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
 }
 
   
