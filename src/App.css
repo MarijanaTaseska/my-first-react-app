@@ -1,0 +1,35 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.App {
+  background-color: #000000;
+  height: 100vh;
+  padding: 20px;
+}
+
+.Header {
+  background-color: #383737;
+  padding: 10px;
+  color: white;
+  text-align: center;
+}
+
+.Content {
+  background-color: #260362;
+  flex: 1;
+  padding: 20px;
+  margin: 10px 0;
+  color: white;
+  /* background-image: ; */
+}
+
+.Footer {
+  background-color:  #383737;;
+  padding: 10px;
+  color: white;
+  text-align: center;
+}
+
+  
