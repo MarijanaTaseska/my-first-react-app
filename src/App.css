@@ -11,10 +11,10 @@ html, body, #root {
   background-position: center;
   display: flex;
   flex-direction: column;
-  padding:20px;
+  /* padding:20px; */
 }
 
-.Header {
+/* .Header {
   position: relative; 
   background-image: url(./images/canyonSky.jpg);
   background-size: cover;
@@ -27,8 +27,8 @@ html, body, #root {
   overflow: hidden;
   width: 100%;
   margin-bottom: 5px;
-}
-.Header::before {
+} */
+/* .Header::before {
   content: '';
   position: absolute;
   top: 0;
@@ -36,15 +36,25 @@ html, body, #root {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6); /* Black overlay with 50% transparency */
-  z-index: 1;
+  /* z-index: 1;
+} */ 
+.Header{
+  background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));  /* Gradient from black to transparent */
+  height: 15vh;
+  color: white;
+  display: flex;  
+  top: 0;
+  z-index: 1000;
+  width: 100%;
 }
-.Header nav {
-  position: relative;
-  z-index: 2; /* Keeps the nav and links on top of the overlay */
-}
+ .Header nav {
+  display: flex;
+  flex-direction: row;
+} 
 
 /* Style the navigation links */
 .Header nav a {
+  
   color: rgb(220, 216, 216);
   text-decoration: none;
   margin: 0 15px;
@@ -61,42 +71,23 @@ html, body, #root {
   justify-content: center;
   align-items: center; /* Center content both horizontally and vertically */
   background-color: #ffffff;
-  padding: 20px;
-  background-image: url(./images/universePurpleVertical.jpg);
+  padding: 20px; 
+  background-image: url(./images/canyonSky.jpg);
   background-position: center;
   background-size: cover;
  
 }
 
-.Footer {
-  position: relative;
-  background-image: url(./images/canyonSky.jpg);
-  background-size: cover; 
-  background-position: center;
-  height: 15vh; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  overflow: hidden;
-  width: 100%;
-  margin-top: 5px;
-}
-.Footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Black overlay with 50% transparency */
-  z-index: 1;
+.Footer{
+background: linear-gradient(to top, black, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));  /* Gradient from black to transparent */
+color: white;
+height: 15vh;
 }
 
 .Footer nav {
   position: relative;
   z-index: 2; /* Keeps the nav and links on top of the overlay */
-}
+ } 
 
 .Footer nav a {
   color: rgb(220, 216, 216);
