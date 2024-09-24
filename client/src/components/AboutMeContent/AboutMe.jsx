@@ -52,7 +52,7 @@ const AboutMe = () => {
 
   return (
     <div style={sectionStyle}>
-      <h2 style={titleStyle}>About Me</h2>
+      <h2 style={titleStyle}>About Meeeeeeee</h2>
       <p style={paragraphStyle}>
         Hi, I’m Marijana Mirchevski, a passionate Full Stack Web Developer based in Las Vegas. I love creating web applications that are both functional and aesthetically pleasing, with a particular focus on front-end development. My journey in tech started with a deep curiosity for solving problems, which led me to explore various programming languages and frameworks.
       </p>
