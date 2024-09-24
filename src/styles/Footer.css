@@ -1,0 +1,61 @@
+/* Basic footer styles */
+.Footer{
+  background: linear-gradient(to top, black, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  padding: 2.5%;
+  display: flex;
+  justify-content: center;  /* Centers the content in the footer */
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.footer {
+  width: 85%;
+}
+
+/* Aligning the links in a row */
+.footer-nav ul {
+  list-style: none;
+  display: flex;  /* Ensures items are in a row */
+  gap: 50px;  /* Space between buttons */
+  margin: 0;
+  padding:0;
+  justify-content: flex-end;  /* Push items to the right */
+  width: 100%;  /* Ensures full width to align to the right */
+}
+
+/* Button-like styles for the footer links */
+.footer-button {
+  background-color: #0b6265;  /* Dark teal button color */
+  color: #efe6b3;  /* Light cream color for text */
+  padding: 10px 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.footer-button:hover {
+  background-color: #45a049;  /* Slightly darker green */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: active button state */
+.footer-button:active {
+  background-color: #3e8e41;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .footer-nav ul {
+    flex-direction: column;  /* Stack items vertically */
+    gap: 10px;
+  }
+
+  .footer-button {
+    width: 100%;
+    text-align: center;
+  }
+}

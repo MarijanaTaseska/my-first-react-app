@@ -1,0 +1,73 @@
+/* Basic header styles */
+.Header{
+  background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));  /* Gradient from black to transparent */
+  height: 15vh;
+  display: flex;  
+  width: 100%;
+  z-index: 1000;
+}
+.header {
+    padding:2.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .header-div{
+    width: 100%;
+  }
+  .logo h1 {
+    padding-left: 10px;
+    font-size: 2.5rem;
+    margin: 0;
+    color: #efe6b3;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Aligning the links in a row */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    margin: 0;
+    padding-right: 20px;
+  }
+  
+  /* Button-like styles for the nav links */
+  .nav-button {
+    background-color: #0b6265;  /* Green button color */
+    color: #efe6b3;
+    padding: 10px 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  }
+  
+  /* Hover effect for buttons */
+  .nav-button:hover {
+    background-color: #45a049;  /* Slightly darker green */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Optional: making the links appear as buttons */
+  .nav-button:active {
+    background-color: #3e8e41;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Ensuring the layout looks good on mobile */
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .nav-button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
