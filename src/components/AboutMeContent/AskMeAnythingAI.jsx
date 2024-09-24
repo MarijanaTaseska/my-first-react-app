@@ -12,7 +12,7 @@ const AskMeAnything = () => {
 
     try {
       const response = await axios.post('/api/ask', { question });
-      setAnswer(response.data.answer);
+      setAnswer(response.data.answer || "No response available");
     } catch (error) {
       console.error('Error:', error);
       setAnswer('An error occurred while asking the question.');
