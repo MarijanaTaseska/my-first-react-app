@@ -18,10 +18,11 @@ const AskMeAnything = () => {
     try {
       const response = await axios.post('/api/ask', { question });
       setAnswer(response.data.answer || "No response available");
-      console.log(answer)
+      setOpen(true) //open the modal after recieeving response
     } catch (error) {
       console.error('Error:', error);
       setAnswer('An error occurred while asking the question.');
+      setOpen(true)
     } finally {
       setLoading(false);
     }
@@ -40,6 +41,22 @@ const AskMeAnything = () => {
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           required
+          sx={{
+            input: { color: 'white' },  // Change input text color
+            '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+                borderColor: 'lightgray',  // Border color
+              },
+              '&:hover fieldset': {
+                borderColor: 'white',  // Border color on hover
+              },
+              '&.Mui-focused fieldset': {
+                borderColor: 'lightblue',  // Border color on focus
+              },
+            },
+            '& .MuiInputLabel-root': { color: 'white' },  // Label color
+            '& .MuiInputLabel-root.Mui-focused': { color: 'lightblue' },  // Label color on focus
+          }}
         />
        <Button type="submit" variant="contained" color="primary" disabled={loading}>
           {loading ? 'Thinking...' : 'Ask'}
