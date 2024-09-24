@@ -27,3 +27,16 @@ yarn-error.log*
 .env
 .env.build
 .vercel
+# Inside your root .gitignore
+
+# For client folder (React)
+/client/node_modules
+/client/build
+/client/dist
+/client/.env.local
+/client/coverage
+
+# For server folder (Node.js backend)
+/server/node_modules
+/server/.env
+/server/coverage
