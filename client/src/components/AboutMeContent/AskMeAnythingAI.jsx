@@ -2,25 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material'
 
-const Modal = ({ isVisible, onClose, answer }) => {
-  if (!isVisible) return null;
 
-  return (
-    <div style={{
-      position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-      backgroundColor: 'white', padding: '20px', zIndex: 1000, border: '1px solid black'
-    }}>
-      <p>AI Response: {answer}</p>
-      <button onClick={onClose}>Close</button>
-    </div>
-  );
-};
 
 const AskMeAnything = () => {
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
   const [loading, setLoading] = useState(false);
-  const [isModalVisible, setModalVisible] = useState(false);
+  const [open, setOpen] = useState(false)
   
 
   const handleSubmit = async (e) => {
@@ -38,25 +26,35 @@ const AskMeAnything = () => {
       setLoading(false);
     }
   };
-
+  const handleClose = () => {
+    setOpen(false);  // Close the modal
+  };
   return (
     <div>
       <h2>Ask Me Anything</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '500px' }}>
+      <TextField
+          label="Ask me anything"
+          variant="outlined"
+          fullWidth
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
-          placeholder="Ask me anything..."
           required
         />
-        <button type="submit" disabled={loading}>
+       <Button type="submit" variant="contained" color="primary" disabled={loading}>
           {loading ? 'Thinking...' : 'Ask'}
-        </button>
+        </Button>
       </form>
-      {answer && <p>AI Response: {answer}</p>}
-      <Modal isVisible={isModalVisible} onClose={() => setModalVisible(false)} answer={answer} />
-
+      {/*MUI DIALOG to display the AI response */}
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>AI Response</DialogTitle>
+        <DialogContent>
+          <p>{answer}</p>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">Close</Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };
