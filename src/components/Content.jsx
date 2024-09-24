@@ -1,12 +1,19 @@
 import React from "react";
 import '../styles/Content.css';
 import ResumeComponent from "./AboutMeContent/ResumeComponent";
+import AboutMe from "./AboutMeContent/AboutMe";
+import ProjectSection from "./AboutMeContent/ProjectSection";
+import Information from "./AboutMeContent/Information"
+import AskMeAnything from "./AboutMeContent/AskMeAnythingAI";
 const Content = () => {
 
     return (
 <div>
 <ResumeComponent />
-    <p>this will be the main content braging about myself</p>
+<AboutMe />
+<ProjectSection />
+<Information />
+<AskMeAnything />
 </div>
     )
 }

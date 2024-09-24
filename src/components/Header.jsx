@@ -3,7 +3,8 @@ import '../styles/Header.css'
 ///import styling if you make them later with CSS
 
 const Header = () => {
-    return (<div className="header-div">
+    return (
+     <div className="header-div">
         <header className="header">
             <div className="logo">
             <h1>My Portfolio</h1> 

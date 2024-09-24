@@ -5,14 +5,25 @@ const app = express();
 
 const PORT = process.env.PORT || 5001;
 
-// Serve static files from the React app's build folder
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.json()); // Middleware to parse JSON
 
-// Catch-all route to serve index.html for any non-API routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// Serve static files in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'build')));
+
+  // Serve index.html for all non-API routes in production
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
+}
+
+// Example API route
+app.post('/api/ask', (req, res) => {
+  const { question } = req.body;
+  res.json({ answer: `You asked: ${question}` });
 });
 
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

@@ -47,7 +47,23 @@ const ResumeComponent = () => {
       const linkHoverStyle = {
         color: '#45a049',  // Color change on hover
       };
-    
+      // const containerStyle = {
+      //   display: 'flex',
+      //   justifyContent: 'space-between',
+      //   alignItems: 'center',
+      //   backgroundColor: '#f4f4f9',
+      //   padding: '40px',
+      //   borderRadius: '10px',
+      //   boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+      //   maxWidth: '800px',
+      //   margin: '0 auto',
+      // };
+      const buttonSectionStyle = {
+        display: 'flex',
+        textAlign:"center",
+        flexDirection: 'row',
+        gap: '10px',  // Adds space between the buttons
+      };
       // Link hover effect state
       const [hovered, setHovered] = React.useState(null);
     
@@ -59,6 +75,7 @@ const ResumeComponent = () => {
         setHovered(null);
       };
     return (
+      
         <div style={sectionStyle}>
         <h2 style={titleStyle}>Marijana Mirchevski</h2>
         <h3 style={subTitleStyle}>Full Stack Web Developer</h3>
@@ -98,6 +115,8 @@ const ResumeComponent = () => {
           I am a skilled web developer with experience in front-end and back-end technologies.
           Click below to download or view my full resume.
         </p>
+        
+        <div style={buttonSectionStyle}> 
         <ResumeButton
           text="View Resume"
           href="/marijanaResume.pdf"
@@ -108,6 +127,7 @@ const ResumeComponent = () => {
           href="/marijanaResume.pdf"
           download={true}  // Automatically download resume
         />
+      </div>
       </div>
     );
   };
