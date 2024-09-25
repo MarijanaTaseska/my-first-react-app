@@ -9,6 +9,7 @@
     "express": "^4.21.0",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
+    "openai": "^4.64.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
