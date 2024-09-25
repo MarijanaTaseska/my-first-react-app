@@ -14,14 +14,14 @@ const AskMeAnything = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+    setQuestion('');
     try {
       const response = await axios.post('/api/ask', { question });
       setAnswer(response.data.answer || "No response available");
       setOpen(true) //open the modal after recieeving response
     } catch (error) {
       console.error('Error:', error);
-      setAnswer('An error occurred while asking the question.');
+      setAnswer('OpenAI is not working at the moment due to exceeded quota');
       setOpen(true)
     } finally {
       setLoading(false);
