@@ -13,38 +13,6 @@ html, body, #root {
   flex-direction: column;
   min-height: 100vh;
 }
+ /* i want to create 2 circle animation in the top right corner of my app for visally better appearence more proffesional and cool */
 
-
-.styles_MainBanner::before {
-  position: absolute;
-  content: "";
-  top: -250px;
-  right: -350px;
-  height: 1000px;
-  width: 1000px;
-  background-image: url("./images/dendylion.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 100% 0;
-  z-index: 1;
-  animation: styles_rotation__nyoUK 45s linear infinite;
-}
-
-@-webkit-keyframes styles_rotation__nyoUK {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes styles_rotation__nyoUK {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 

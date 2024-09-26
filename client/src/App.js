@@ -8,8 +8,7 @@ import './App.css'
 
 function App() {
   return (
-    <div className="App styles_MainBanner ">
-      
+    <div className="App">
   <header className='Header'>
   <Header />
   </header>
