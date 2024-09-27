@@ -1,8 +1,2 @@
-.Content {
-    flex: 1; /* Content will take up the remaining space */
-    display: flex;
-    justify-content: center;
-    /* align-items: center; Center content both horizontally and vertically */
-    background-color: #ffffff;
-  } 
+ 
   

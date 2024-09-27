@@ -41,6 +41,11 @@ const InformationAboutMe = () => {
   };
 
   const [hovered, setHovered] = React.useState(null);
+  const [isInfoVisible, setIsInfoVisible] = React.useState(false);
+
+const toggleInfo = () => {
+  setIsInfoVisible(!isInfoVisible);
+};
 
   const handleMouseEnter = (name) => {
     setHovered(name);
@@ -49,6 +54,8 @@ const InformationAboutMe = () => {
   const handleMouseLeave = () => {
     setHovered(null);
   };
+  
+  
 
   return (
     <div className="information-container">
@@ -101,6 +108,12 @@ const InformationAboutMe = () => {
     <div style={animated} className="animated-div">
     <p>Additional Information</p>
     </div>
+    <button onClick={toggleInfo} className="contact-button">Contact Me</button>
+      
+      <div id="hidden-info" style={{ display: isInfoVisible ? 'block' : 'none' }}>
+        <strong>Phone: </strong> 702-465-7151<br />
+        <strong>Email: </strong> marijana.taseska@gmail.com
+      </div>
     </div>
   );
 };
