@@ -1,19 +1,24 @@
 import React from "react";
+import './information.css'
 
 const InformationAboutMe = () => {
+  const animated = {
+    opacity: '0', /* Start hidden */
+    transform: 'translateY(20px)', /* Start slightly off-screen */
+    animation: 'fadeInUp 1s ease-in-out forwards',
+  }
   const sectionStyle = {
-    padding: '40px',
+    padding: '2%',
     maxWidth: '800px',
     margin: '0 auto',
     textAlign: 'left',
-    backgroundColor: '#f9f9f9',
+    backgroundColor: '#f9f9f939',
     borderRadius: '10px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
   };
 
   const titleStyle = {
-    fontSize: '2.5rem',
-    color: '#0b6265',
+    fontSize: '1.5rem',
     marginBottom: '20px',
     textAlign: 'center',
   };
@@ -24,14 +29,15 @@ const InformationAboutMe = () => {
   };
 
   const linkStyle = {
-    color: '#0b6265',
+    color:'black',
     textDecoration: 'none',
     fontWeight: 'bold',
     marginRight: '10px',
+    padding:'5%',
   };
 
   const linkHoverStyle = {
-    color: '#45a049',
+    color:'rgba(149, 149, 148, 0.96)',
   };
 
   const [hovered, setHovered] = React.useState(null);
@@ -45,11 +51,12 @@ const InformationAboutMe = () => {
   };
 
   return (
-    <div style={sectionStyle}>
+    <div className="information-container">
+    <div style={sectionStyle} className="information-div">
       <h2 style={titleStyle}>Contact Information</h2>
       <p style={contactInfoStyle}>
         <strong>Location:</strong> Las Vegas, NV<br />
-        <strong>Phone:</strong> 
+        <strong>Phone: </strong> 
         <a 
           href="tel:+17024657151" 
           style={hovered === 'phone' ? { ...linkStyle, ...linkHoverStyle } : linkStyle}
@@ -58,7 +65,7 @@ const InformationAboutMe = () => {
         >
           702-465-7151
         </a><br />
-        <strong>Email:</strong> 
+        <strong>Email: </strong> 
         <a 
           href="mailto:marijana.taseska@gmail.com" 
           style={hovered === 'email' ? { ...linkStyle, ...linkHoverStyle } : linkStyle}
@@ -68,8 +75,6 @@ const InformationAboutMe = () => {
           marijana.taseska@gmail.com
         </a>
       </p>
-
-      <h3 style={titleStyle}>Social Links</h3>
       <p style={contactInfoStyle}>
         <a 
           href="https://github.com/MarijanaTaseska" 
@@ -92,6 +97,10 @@ const InformationAboutMe = () => {
           LinkedIn
         </a>
       </p>
+    </div>
+    <div style={animated} className="animated-div">
+    <p>Additional Information</p>
+    </div>
     </div>
   );
 };

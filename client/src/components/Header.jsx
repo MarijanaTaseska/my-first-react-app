@@ -1,12 +1,11 @@
 import React from "react";
 import '../styles/Header.css'
-///import styling if you make them later with CSS
 
 const Header = () => {
     return (
      <div className="header-div">
         <header className="header">
-            <div className="logo">
+            <div className="portfolio">
             <h1>My Portfolio</h1> 
             </div>
              <nav>

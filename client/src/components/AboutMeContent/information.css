@@ -1,0 +1,16 @@
+.information-container {
+    display: flex; /* Flexbox for row layout */
+    justify-content: space-between; /* Space between the two divs */
+    align-items: flex-start; /* Align items at the start */
+  }
+  
+  .information-div, .animated-div {
+    flex: 1; /* Allow both divs to take equal space */
+    margin: 0 20px; /* Add some space between the divs */
+  }
+  
+  .animated-div {
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start slightly below */
+    animation: fadeInUp 1s ease-in-out forwards;
+  }
