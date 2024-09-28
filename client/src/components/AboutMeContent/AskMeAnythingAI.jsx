@@ -31,18 +31,19 @@ const AskMeAnything = () => {
     setOpen(false);  // Close the modal
   };
   return (
-    <div>
-      <h2>Ask Me Anything</h2>
+    <div style={{padding:"30px"}}>
+      <h2 style={{paddingLeft:'20px'}}>Ask Me Anything here </h2>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '500px' }}>
       <TextField
           label="Ask me anything"
+          placeholder='Just dont ask me about the secret sauce...'
           variant="outlined"
           fullWidth
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           required
           sx={{
-            input: { color: 'white' },  // Change input text color
+            input: { color: 'darkblue' },  // Change input text color
             '& .MuiOutlinedInput-root': {
               '& fieldset': {
                 borderColor: 'lightgray',  // Border color
@@ -51,11 +52,11 @@ const AskMeAnything = () => {
                 borderColor: 'white',  // Border color on hover
               },
               '&.Mui-focused fieldset': {
-                borderColor: 'lightblue',  // Border color on focus
+                borderColor: 'darkblue',  // Border color on focus
               },
             },
             '& .MuiInputLabel-root': { color: 'white' },  // Label color
-            '& .MuiInputLabel-root.Mui-focused': { color: 'lightblue' },  // Label color on focus
+            '& .MuiInputLabel-root.Mui-focused': { color: 'darkblue' },  // Label color on focus
           }}
         />
        <Button type="submit" variant="contained" color="primary" disabled={loading}>

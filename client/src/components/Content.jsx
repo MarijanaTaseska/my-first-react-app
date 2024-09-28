@@ -19,8 +19,8 @@ const Content = () => {
 </ motion.div>
 <AboutMe />
 <ProjectSection />
-<Information />
 <AskMeAnything />
+<Information />
 </div>
     )
 }

@@ -7,27 +7,13 @@
   width: 100%;
 }
 .footer {
-  width: 85%;
-}
-/* Aligning the links in a row */
-.footer-nav ul {
-  list-style: none;
-  display: flex;  /* Ensures items are in a row */
-  gap: 50px;  
-  margin: 0;
-  padding:0;
-  justify-content: flex-end;  /* Push items to the right */
-  width: 100%;  
+  width: 90%;
+  border-top: 2px solid rgba(197, 193, 193, 0.86);
+  height: 50px;
 }
 
-.footer-button {
-  color: #efcc05ee;; 
-  text-decoration: none;
-  font-weight: bold;
-  font-family: 'Roboto', sans-serif;
-  border-radius: 25px;
-  padding: 40px;
-}
+
+
 
 /* Responsive layout */
 @media (max-width: 768px) {

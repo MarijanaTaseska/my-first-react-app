@@ -5,13 +5,7 @@ const Footer = () => {
 
     return (
 <div className="footer">
-    <nav className="footer-nav">
-    <ul>
-       <li><a href="#profile" className="footer-button">Profile</a></li>
-       <li><a href="#projects" className="footer-button">Projects</a></li>
-       <li><a href="#contact" className="footer-button">Contact</a></li>
-      </ul>
-    </nav>
+<p style={{textAlign:'end', paddingRight:'4%'}}>&copy; 2024 Marijana Mirchevski. All Rights Reserved.</p>
 </div>
     )
 }
