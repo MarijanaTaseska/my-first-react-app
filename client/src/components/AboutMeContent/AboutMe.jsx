@@ -1,32 +1,21 @@
 import React from "react";
 const AboutMe = () => {
   const sectionStyle = {
-    padding: '40px',
-    maxWidth: '800px',
-    margin: '0 auto',
-    textAlign: 'left',
+    textAlign: 'center',
     backgroundColor: '#f9f9f9',
-    borderRadius: '10px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   };
 
   const titleStyle = {
     fontSize: '2.5rem',
-    color: '#0b6265',
-    marginBottom: '20px',
-    textAlign: 'center',
   };
 
   const headingStyle = {
     fontSize: '1.8rem',
-    color: '#0b6265',
-    marginBottom: '10px',
   };
 
   const paragraphStyle = {
     fontSize: '1.2rem',
     lineHeight: '1.6',
-    marginBottom: '20px',
   };
 
   const listStyle = {

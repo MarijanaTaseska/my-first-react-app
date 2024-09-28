@@ -2,19 +2,12 @@ import React from "react";
 
 const ProjectSection = () => {
   const sectionStyle = {
-    padding: '40px',
-    maxWidth: '800px',
-    margin: '0 auto',
-    textAlign: 'left',
+    textAlign: 'center',
     backgroundColor: '#f9f9f9',
-    borderRadius: '10px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   };
 
   const titleStyle = {
     fontSize: '2.5rem',
-    color: '#0b6265',
-    marginBottom: '20px',
     textAlign: 'center',
   };
 
@@ -24,7 +17,6 @@ const ProjectSection = () => {
 
   const projectTitleStyle = {
     fontSize: '1.8rem',
-    color: '#0b6265',
   };
 
   const projectDescriptionStyle = {
@@ -35,18 +27,17 @@ const ProjectSection = () => {
   const techStackStyle = {
     fontStyle: 'italic',
     color: '#555',
-    marginBottom: '10px',
   };
 
   const linkStyle = {
-    color: '#0b6265',
+    color: 'black',
     textDecoration: 'none',
     fontWeight: 'bold',
     transition: 'color 0.3s ease',
   };
 
   const linkHoverStyle = {
-    color: '#45a049',
+    color: '#b2b9b2a5',
   };
 
   const [hovered, setHovered] = React.useState(null);
@@ -71,7 +62,7 @@ const ProjectSection = () => {
         </p>
         <p style={techStackStyle}>Tech Stack: React, LESS, Node.js, Auth0, Axios</p>
         <a
-          href="https://github.com/your-project-link"
+          href="https://github.com/MarijanaTaseska/asylum-rg-fe-starter"
           target="_blank"
           rel="noopener noreferrer"
           style={hovered === 'project1' ? { ...linkStyle, ...linkHoverStyle } : linkStyle}
@@ -90,7 +81,7 @@ const ProjectSection = () => {
         </p>
         <p style={techStackStyle}>Tech Stack: React, Node.js, Jest, PostgreSQL</p>
         <a
-          href="https://github.com/your-project-link"
+          href="https://github.com/MarijanaTaseska/web-sprint-challenge-advanced-web-applications"
           target="_blank"
           rel="noopener noreferrer"
           style={hovered === 'project2' ? { ...linkStyle, ...linkHoverStyle } : linkStyle}

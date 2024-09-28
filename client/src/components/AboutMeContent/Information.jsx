@@ -1,118 +1,75 @@
-import React from "react";
-import './information.css'
+import React, {useState} from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const InformationAboutMe = () => {
-  const animated = {
-    opacity: '0', /* Start hidden */
-    transform: 'translateY(20px)', /* Start slightly off-screen */
-    animation: 'fadeInUp 1s ease-in-out forwards',
-  }
-  const sectionStyle = {
-    padding: '2%',
-    maxWidth: '800px',
+  const [hoveredIcon, setHoveredIcon] = useState(null);
+
+  const iconStyle = (icon) => ({
+    margin: '10px',
+    fontSize: '3rem',
+    color: hoveredIcon === icon ? '#ceec37' : '#272424ae', // Changes color on hover
+    transition: 'transform 0.3s ease, color 0.3s ease',
+    transform: hoveredIcon === icon ? 'scale(1.1)' : 'scale(1)', // Slightly enlarges on hover
+    padding: '20px',
+    border: '2px solid #333',
+    borderRadius: '50%',  // Makes it a circle
+    width: '70px',        // Circle size
+    height: '70px',       // Circle size
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  });
+
+  const iconContainerStyle = {
+    display: 'flex',
+    justifyContent: 'space-between',  // Spreads out the icons
+    marginTop: '20px',
+    maxWidth: '80%',
     margin: '0 auto',
-    textAlign: 'left',
-    backgroundColor: '#f9f9f939',
-    borderRadius: '10px',
-    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
   };
-
-  const titleStyle = {
-    fontSize: '1.5rem',
-    marginBottom: '20px',
-    textAlign: 'center',
-  };
-
-  const contactInfoStyle = {
-    fontSize: '1.2rem',
-    marginBottom: '20px',
-  };
-
-  const linkStyle = {
-    color:'black',
-    textDecoration: 'none',
-    fontWeight: 'bold',
-    marginRight: '10px',
-    padding:'5%',
-  };
-
-  const linkHoverStyle = {
-    color:'rgba(149, 149, 148, 0.96)',
-  };
-
-  const [hovered, setHovered] = React.useState(null);
-  const [isInfoVisible, setIsInfoVisible] = React.useState(false);
-
-const toggleInfo = () => {
-  setIsInfoVisible(!isInfoVisible);
-};
-
-  const handleMouseEnter = (name) => {
-    setHovered(name);
-  };
-
-  const handleMouseLeave = () => {
-    setHovered(null);
-  };
-  
-  
 
   return (
-    <div className="information-container">
-    <div style={sectionStyle} className="information-div">
-      <h2 style={titleStyle}>Contact Information</h2>
-      <p style={contactInfoStyle}>
-        <strong>Location:</strong> Las Vegas, NV<br />
-        <strong>Phone: </strong> 
-        <a 
-          href="tel:+17024657151" 
-          style={hovered === 'phone' ? { ...linkStyle, ...linkHoverStyle } : linkStyle}
-          onMouseEnter={() => handleMouseEnter('phone')}
-          onMouseLeave={handleMouseLeave}
+    <div style={{ textAlign: 'center', marginTop: '20px' }}>
+      <h2 style={{fontSize:'2rem', padding:'2%',fontFamily: 'Poppins'}}>Get in Touch</h2>
+      <div style={iconContainerStyle}>
+      <a
+          href="tel:+17024657151"
+          style={iconStyle('phone')}
+          onMouseEnter={() => setHoveredIcon('phone')}
+          onMouseLeave={() => setHoveredIcon(null)}
         >
-          702-465-7151
-        </a><br />
-        <strong>Email: </strong> 
-        <a 
-          href="mailto:marijana.taseska@gmail.com" 
-          style={hovered === 'email' ? { ...linkStyle, ...linkHoverStyle } : linkStyle}
-          onMouseEnter={() => handleMouseEnter('email')}
-          onMouseLeave={handleMouseLeave}
-        >
-          marijana.taseska@gmail.com
+          <FontAwesomeIcon icon={faPhone} />
         </a>
-      </p>
-      <p style={contactInfoStyle}>
-        <a 
-          href="https://github.com/MarijanaTaseska" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          style={hovered === 'github' ? { ...linkStyle, ...linkHoverStyle } : linkStyle}
-          onMouseEnter={() => handleMouseEnter('github')}
-          onMouseLeave={handleMouseLeave}
+        <a
+          href="mailto:marijana.taseska@gmail.com"
+          style={iconStyle('email')}
+          onMouseEnter={() => setHoveredIcon('email')}
+          onMouseLeave={() => setHoveredIcon(null)}
         >
-          GitHub
+          <FontAwesomeIcon icon={faEnvelope} />
         </a>
-        <a 
-          href="https://www.linkedin.com/in/marijana-mirchevski" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          style={hovered === 'linkedin' ? { ...linkStyle, ...linkHoverStyle } : linkStyle}
-          onMouseEnter={() => handleMouseEnter('linkedin')}
-          onMouseLeave={handleMouseLeave}
+        <a
+          href="https://github.com/MarijanaTaseska"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={iconStyle('github')}
+          onMouseEnter={() => setHoveredIcon('github')}
+          onMouseLeave={() => setHoveredIcon(null)}
         >
-          LinkedIn
+          <FontAwesomeIcon icon={faGithub} />
         </a>
-      </p>
-    </div>
-    <div style={animated} className="animated-div">
-    <p>Additional Information</p>
-    </div>
-    <button onClick={toggleInfo} className="contact-button">Contact Me</button>
-      
-      <div id="hidden-info" style={{ display: isInfoVisible ? 'block' : 'none' }}>
-        <strong>Phone: </strong> 702-465-7151<br />
-        <strong>Email: </strong> marijana.taseska@gmail.com
+        <a
+          href="https://www.linkedin.com/in/marijana-mirchevski"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={iconStyle('linkedin')}
+          onMouseEnter={() => setHoveredIcon('linkedin')}
+          onMouseLeave={() => setHoveredIcon(null)}
+        >
+          <FontAwesomeIcon icon={faLinkedin} />
+        </a>
       </div>
     </div>
   );
