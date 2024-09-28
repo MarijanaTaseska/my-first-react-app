@@ -9,18 +9,20 @@ const ResumeComponent = () => {
       };
     
       const titleStyle = {
-        fontSize: '2.5rem'
+        fontSize: '4rem'
       };
     
     
       const contactStyle = {
-        fontSize: '1rem',
+        fontSize: '2rem',
         color: 'black',
+        lineHeight:'1rem',
       };
     
       const paragraphStyle = {
-        fontSize: '1.2rem',
+        fontSize: '1.8rem',
         lineHeight: '1.6',
+        paddingTop:'2%'
       };
       const linkStyle = {
         color: 'black',  // Custom link color
@@ -50,7 +52,7 @@ const ResumeComponent = () => {
       
         <div style={sectionStyle}>
         <h2 style={titleStyle}>Marijana Mirchevski</h2>
-        <h3>Full Stack Web Developer</h3>
+        <h3 style={contactStyle}>Full Stack Web Developer</h3>
         <div style={contactStyle}>
           Las Vegas, NV |
            <a 

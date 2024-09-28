@@ -1,26 +1,82 @@
-import React from "react";
+import React, {useEffect} from "react";
 import '../styles/Content.css';
 import ResumeComponent from "./AboutMeContent/ResumeComponent";
 import AboutMe from "./AboutMeContent/AboutMe";
 import ProjectSection from "./AboutMeContent/ProjectSection";
 import Information from "./AboutMeContent/Information"
 import AskMeAnything from "./AboutMeContent/AskMeAnythingAI";
-import {motion} from 'framer-motion'
+import {motion, useAnimation} from 'framer-motion';
+import { useInView } from 'react-intersection-observer'
+
+const useInViewAnimation = (delay = 0) => {
+    const controls = useAnimation();
+    const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  
+    useEffect(() => {
+      if (inView) {
+        controls.start({ opacity: 1, x: 0 });
+      }
+    }, [controls, inView]);
+  
+    return { ref, controls, delay };
+  };
+
+
+
 const Content = () => {
 
+
+ const resumeAnimation = useInViewAnimation(0.2);
+  const aboutMeAnimation = useInViewAnimation(0.4);
+  const projectAnimation = useInViewAnimation(0.6);
+  const askMeAnythingAnimation = useInViewAnimation(0.8);
+  const informationAnimation = useInViewAnimation(1.0);
     return (
 <div className="content">
 <motion.div
-           initial={{ opacity: 0, x: -300 }}  // Start off-screen to the left (-300px)
-           animate={{ opacity: 1, x: 0 }}     // Move to original position (0px) and fade in
-           transition={{ duration: 1, delay: 0.5 }}   // Animation lasts 1.5 seconds
+        ref={resumeAnimation.ref}
+        initial={{ opacity: 0, x: -300 }}  // Start off-screen to the left
+        animate={resumeAnimation.controls}  // Use controls for in-view animation
+        transition={{ duration: 1, delay: resumeAnimation.delay }}
       >
 <ResumeComponent />
 </ motion.div>
+
+<motion.div
+        ref={aboutMeAnimation.ref}
+        initial={{ opacity: 0, x: 300 }}  // Start off-screen to the right
+        animate={aboutMeAnimation.controls}  // Use controls for in-view animation
+        transition={{ duration: 1, delay: aboutMeAnimation.delay }}
+      >
 <AboutMe />
+</motion.div>
+
+<motion.div
+        ref={projectAnimation.ref}
+        initial={{ opacity: 0, y: 100 }}  // Start off-screen from below
+        animate={projectAnimation.controls}  // Use controls for in-view animation
+        transition={{ duration: 1, delay: projectAnimation.delay }}
+      >
 <ProjectSection />
+</motion.div>
+
+<motion.div
+        ref={askMeAnythingAnimation.ref}
+        initial={{ opacity: 0, scale: 0.8 }}  // Start with a smaller scale
+        animate={askMeAnythingAnimation.controls}  // Use controls for in-view animation
+        transition={{ duration: 1, delay: askMeAnythingAnimation.delay }}
+      >
 <AskMeAnything />
+</motion.div>
+
+<motion.div
+        ref={informationAnimation.ref}
+        initial={{ opacity: 0, y: 100 }}  // Start off-screen from below
+        animate={informationAnimation.controls}  // Use controls for in-view animation
+        transition={{ duration: 1, delay: informationAnimation.delay }}
+      >
 <Information />
+</motion.div>
 </div>
     )
 }
