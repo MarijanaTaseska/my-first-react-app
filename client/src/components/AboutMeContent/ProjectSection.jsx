@@ -1,39 +1,52 @@
 import React from "react";
+import landingPageImage from '../../images/project1.png';
+import project2Image from '../../images/project2.png';
 
 const ProjectSection = () => {
   const sectionStyle = {
     textAlign: 'center',
-    backgroundColor: '#f9f9f9',
+    padding:'3%',
+    display:'flex',
+    margin:'40px',
+    height:'50vh',
+    justifyContent: 'space-evenly',
   };
-
-  const titleStyle = {
-    fontSize: '2.5rem',
+  
+  const projectContainer = {
+    width: '45%',
     textAlign: 'center',
+    padding: '10px',
+    border: '1px solid gray',
+    backgroundColor: '#f9f9f9',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   };
-
-  const projectStyle = {
-    marginBottom: '30px',
-  };
-
-  const projectTitleStyle = {
-    fontSize: '1.8rem',
-  };
-
-  const projectDescriptionStyle = {
-    fontSize: '1.2rem',
-    marginBottom: '10px',
+  
+  
+  const imageStyle = {
+    width: '100%',
+    height: '600px',
+    backgroundSize: 'cover',
+    backgroundPosition: 'top',
+    marginBottom: '20px',
   };
 
   const techStackStyle = {
+    fontSize:'1.5rem',
     fontStyle: 'italic',
     color: '#555',
+    height:'5px'
   };
+
 
   const linkStyle = {
     color: 'black',
     textDecoration: 'none',
     fontWeight: 'bold',
     transition: 'color 0.3s ease',
+    fontSize:'1.5rem',
+    padding:'1%',
   };
 
   const linkHoverStyle = {
@@ -50,16 +63,19 @@ const ProjectSection = () => {
     setHovered(null);
   };
 
-  return (
+  return (<>
+    <h2 style={{textAlign:'center', fontSize:'2.5rem', paddingTop:'3%'}}>
+    Take a look at some of my recent projects:</h2>
     <div style={sectionStyle}>
-      <h2 style={titleStyle}>My Projects</h2>
-
+      
       {/* Project 1 */}
-      <div style={projectStyle}>
-        <h3 style={projectTitleStyle}>Human Rights First: Asylum Report Generator</h3>
-        <p style={projectDescriptionStyle}>
-          Developed a responsive landing page using React and LESS, integrated live API data for dynamic visualizations, and implemented secure authentication with Auth0.
-        </p>
+      <div style={projectContainer}>
+        <div
+          style={{
+            ...imageStyle,
+            backgroundImage: `url(${landingPageImage})`,
+          }}
+        ></div>
         <p style={techStackStyle}>Tech Stack: React, LESS, Node.js, Auth0, Axios</p>
         <a
           href="https://github.com/MarijanaTaseska/asylum-rg-fe-starter"
@@ -74,11 +90,13 @@ const ProjectSection = () => {
       </div>
 
       {/* Project 2 */}
-      <div style={projectStyle}>
-        <h3 style={projectTitleStyle}>Advanced Web Applications</h3>
-        <p style={projectDescriptionStyle}>
-          Created a full-stack application with secure login, data management, and comprehensive testing using Jest.
-        </p>
+      <div style={projectContainer}>
+        <div
+          style={{
+            ...imageStyle,
+            backgroundImage: `url(${project2Image})`,
+          }}
+        ></div>
         <p style={techStackStyle}>Tech Stack: React, Node.js, Jest, PostgreSQL</p>
         <a
           href="https://github.com/MarijanaTaseska/web-sprint-challenge-advanced-web-applications"
@@ -91,10 +109,11 @@ const ProjectSection = () => {
           View on GitHub
         </a>
       </div>
-
-      {/* Add more projects as needed */}
     </div>
+    </>
   );
 };
+
+
 
 export default ProjectSection;

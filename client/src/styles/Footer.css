@@ -10,6 +10,7 @@
   width: 90%;
   border-top: 2px solid rgba(197, 193, 193, 0.86);
   height: 50px;
+  box-sizing: border-box; 
 }
 
 

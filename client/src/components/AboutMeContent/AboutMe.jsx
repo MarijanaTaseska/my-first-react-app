@@ -3,6 +3,11 @@ const AboutMe = () => {
   const sectionStyle = {
     textAlign: 'center',
     backgroundColor: '#f9f9f9',
+    display:'flex',
+    flexWrap:'wrap',
+    justifyContent:'space-evenly',
+    padding:'5%',
+    
   };
 
   const titleStyle = {
@@ -30,23 +35,26 @@ const AboutMe = () => {
 
   return (
     <div style={sectionStyle}>
+      <div className="about-me">
       <h2 style={titleStyle}>About Meeeeeeee</h2>
       <p style={paragraphStyle}>
         Hi, I’m Marijana Mirchevski, a passionate Full Stack Web Developer based in Las Vegas. I love creating web applications that are both functional and aesthetically pleasing, with a particular focus on front-end development. My journey in tech started with a deep curiosity for solving problems, which led me to explore various programming languages and frameworks.
       </p>
-
-      <h3 style={headingStyle}>Education</h3>
       <p style={paragraphStyle}>
         I hold a Bachelor of Business Administration from South East European University (SEEU), and I am a graduate of the Full Stack Web Development program at Bloom Institute of Technology (BloomTech). This program gave me a strong foundation in full-stack development, with a focus on modern web technologies like React, Node.js, and database management.
       </p>
+      </div>
 
+      <div className="certifications">
       <h3 style={headingStyle}>Certifications</h3>
       <ul style={listStyle}>
         <li style={listItemStyle}>Full Stack Web Development - BloomTech (2024)</li>
-        <li style={listItemStyle}>JavaScript Algorithms and Data Structures - freeCodeCamp</li>
+        <li style={listItemStyle}>Bachelor of Business Administration - South East European University (2010)</li>
         <li style={listItemStyle}>React & Redux Certification - Codecademy</li>
       </ul>
+      </div>
 
+      <div className="technical-skills">
       <h3 style={headingStyle}>Technical Skills</h3>
       <ul style={listStyle}>
         <li style={listItemStyle}>Front-End: React.js, Redux, HTML, CSS, JavaScript (ES6+)</li>
@@ -54,11 +62,15 @@ const AboutMe = () => {
         <li style={listItemStyle}>Tools: Git, GitHub, VS Code, Heroku, Vercel</li>
         <li style={listItemStyle}>Testing: Jest, React Testing Library, Postman</li>
       </ul>
-
-      <h3 style={headingStyle}>Personal Interests</h3>
+      </div>
+      
+    <div className="personal">
+    <h3 style={headingStyle}>Personal Interests</h3>
       <p style={paragraphStyle}>
         When I'm not coding, I enjoy exploring advancements in AI, UX/UI design, and contributing to open-source projects. I am always eager to learn new technologies and am currently fascinated by the latest trends in web development and AI-powered tools.
       </p>
+    </div>
+
     </div>
   );
 };

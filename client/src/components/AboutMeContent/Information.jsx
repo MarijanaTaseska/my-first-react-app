@@ -32,7 +32,8 @@ const InformationAboutMe = () => {
 
   return (
     <div style={{ textAlign: 'center', marginTop: '20px' }}>
-      <h2 style={{fontSize:'2rem', padding:'2%',fontFamily: 'Poppins'}}>Get in Touch</h2>
+      <h2 style={{fontSize:'2rem', padding:'2%',fontFamily: 'Poppins',textAlign:'start'}}>
+        Get in Touch</h2>
       <div style={iconContainerStyle}>
       <a
           href="tel:+17024657151"

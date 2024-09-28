@@ -9,7 +9,7 @@ import {motion} from 'framer-motion'
 const Content = () => {
 
     return (
-<div>
+<div className="content">
 <motion.div
            initial={{ opacity: 0, x: -300 }}  // Start off-screen to the left (-300px)
            animate={{ opacity: 1, x: 0 }}     // Move to original position (0px) and fade in
