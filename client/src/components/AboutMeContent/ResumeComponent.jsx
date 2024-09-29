@@ -6,6 +6,7 @@ const ResumeComponent = () => {
     const sectionStyle = {
         padding: '40px',
         textAlign: 'center',
+        margin:'2%'
       };
     
       const titleStyle = {

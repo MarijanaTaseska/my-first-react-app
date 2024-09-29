@@ -29,7 +29,6 @@ const Content = () => {
  const resumeAnimation = useInViewAnimation(0.2);
   const aboutMeAnimation = useInViewAnimation(0.4);
   const projectAnimation = useInViewAnimation(0.6);
-  const askMeAnythingAnimation = useInViewAnimation(0.8);
   const informationAnimation = useInViewAnimation(1.0);
     return (
 <div className="content">
@@ -60,14 +59,7 @@ const Content = () => {
 <ProjectSection />
 </motion.div>
 
-<motion.div
-        ref={askMeAnythingAnimation.ref}
-        initial={{ opacity: 0, scale: 0.8 }}  // Start with a smaller scale
-        animate={askMeAnythingAnimation.controls}  // Use controls for in-view animation
-        transition={{ duration: 1, delay: askMeAnythingAnimation.delay }}
-      >
 <AskMeAnything />
-</motion.div>
 
 <motion.div
         ref={informationAnimation.ref}

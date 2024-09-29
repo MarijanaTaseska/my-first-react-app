@@ -31,9 +31,9 @@ const AskMeAnything = () => {
     setOpen(false);  // Close the modal
   };
   return (
-    <div style={{padding:"30px"}}>
-      <h2 style={{paddingLeft:'20px'}}>Ask Me Anything here </h2>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '500px' }}>
+    <div style={{height:'300px', padding:'5%'}}>
+      <h2 style={{paddingLeft:'20px', fontSize:'2rem'}}>Ask Me Anything here </h2>
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth:'700px'}}>
       <TextField
           label="Ask me anything"
           placeholder='Just dont ask me about the secret sauce...'

@@ -1,13 +1,16 @@
 import React from "react";
+import fragile from '../../images/fragile.jpg'
 const AboutMe = () => {
   const sectionStyle = {
     textAlign: 'center',
-    // backgroundColor: '#f9f9f9',
     display:'flex',
     flexWrap:'wrap',
     justifyContent:'space-evenly',
     padding:'5%',
-    margin:'50px'
+    margin:'50px',
+    backgroundImage: `url(${fragile})`,  // Use the imported image
+    backgroundSize: 'cover',   // Optional, depending on your design
+    backgroundPosition: 'center',
   };
 
   const titleStyle = {
@@ -16,22 +19,18 @@ const AboutMe = () => {
 
   const headingStyle = {
     fontSize: '1.8rem',
-    border:'2px solid gray',
-    borderRadius:'50px',
     padding:'3%',
   };
 
   const paragraphStyle = {
     fontSize: '1.5rem',
     lineHeight: '1.6',
-    // border:'2px solid gray',
   };
 
   const listStyle = {
     listStyleType:'circle',
     lineHeight:'2rem',
     paddingLeft: '0',
-    // border:'2px solid gray',
     textAlign:'left',
   };
 
@@ -41,7 +40,7 @@ const AboutMe = () => {
   };
 
   return (
-    <div style={sectionStyle}>
+    <div style={sectionStyle} id="profile">
       <h2 style={titleStyle}>The Person Behind the Projects</h2>
       <div style={paragraphStyle} className="about-me" >
       <p>

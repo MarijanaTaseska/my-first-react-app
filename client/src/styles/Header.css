@@ -14,6 +14,7 @@
     border-bottom: 2px solid rgba(197, 193, 193, 0.86);
     width: 100%;
     margin: 2%;
+    position: relative;
   }
   .header-div{
     width: 90%;
@@ -21,10 +22,10 @@
   .portfolio h1 {
     font-size: 2rem;
     margin: 0;
-    color: #efcc05ee;
+    color: #060606ee;
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    font-family: 'Poopins';
+    font-family: 'Poppins';
     margin-left: 30px;
   }
   
@@ -34,15 +35,30 @@
     display: flex;
     gap: 40px;
     margin: 0;
-    font-family: 'Poopins';
+    font-family:'Poppins';
   }
   
   .nav-button {
-    color:#efcc05ee;
+    color:#040401ee;
     padding: 10px 50px;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.5rem;
+  }
+  .rotating-shape {
+    position: absolute;
+    top:-200px;  /* Adjust this to position it correctly */
+    right:-600px; 
+    width: 900px;
+    height: 900px;
+    background-image: url('../images/firstTry.png');
+    background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%; /* This ensures the shape remains circular */
+  animation: rotate 20s infinite linear;
+  overflow: hidden;  /* Hide the part outside the quarter */
+  z-index: -1;  /* Keeps it behind other content */
   }
 
   /* Ensuring the layout looks good on mobile */

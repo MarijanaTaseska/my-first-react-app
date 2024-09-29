@@ -2,10 +2,20 @@ import React, {useState} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import colors from '../../images/colors.jpg'
 
 const InformationAboutMe = () => {
   const [hoveredIcon, setHoveredIcon] = useState(null);
-
+ const iconBox = {
+    textAlign: 'center',
+    margin: '20px',
+    border:'2px solid black',
+    padding:'2%',
+    backgroundImage: `url(${colors})`,  // Use the imported image
+    backgroundSize: 'cover',   // Optional, depending on your design
+    backgroundPosition: 'bottom',
+   
+ }
   const iconStyle = (icon) => ({
     margin: '10px',
     fontSize: '3rem',
@@ -31,8 +41,8 @@ const InformationAboutMe = () => {
   };
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '20px' }}>
-      <h2 style={{fontSize:'2rem', padding:'2%',fontFamily: 'Poppins',textAlign:'start'}}>
+    <div style={iconBox} id="contact">
+      <h2 style={{fontSize:'3rem', paddingLeft:'8%',fontFamily: 'Poppins',textAlign:'start'}}>
         Get in Touch</h2>
       <div style={iconContainerStyle}>
       <a

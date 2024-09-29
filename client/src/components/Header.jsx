@@ -15,6 +15,7 @@ const Header = () => {
                 <li><a href="#contact" className="nav-button">Contact</a></li>
               </ul>
              </nav>
+             <div className="rotating-shape"></div>
         </header>
         </div>
     )

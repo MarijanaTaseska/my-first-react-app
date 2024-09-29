@@ -64,7 +64,7 @@ const ProjectSection = () => {
   };
 
   return (<>
-    <h2 style={{textAlign:'center', fontSize:'2.5rem', paddingTop:'3%'}}>
+    <h2 style={{textAlign:'center', fontSize:'2.5rem', paddingTop:'3%'}}  id="projects">
     Take a look at some of my recent projects:</h2>
     <div style={sectionStyle}>
       
