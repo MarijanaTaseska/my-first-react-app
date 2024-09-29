@@ -20,16 +20,18 @@ const InformationAboutMe = () => {
     };
   }, []);
 
- const iconBox = {
+  const iconBox = {
     textAlign: 'center',
     margin: '20px',
-    border:'2px solid black',
+    border: '2px solid black',
     padding: isMobile ? '5%' : '2%', 
-    paddingBottom: isMobile ? '30%' : '0%', 
+    paddingBottom: isMobile ? '30%' : '10%', 
     backgroundImage: `url(${colors})`,  // Use the imported image
     backgroundSize: 'cover',   // Optional, depending on your design
-    backgroundPosition:'bottom', 
- }
+    backgroundPosition: 'bottom',
+    width: isMobile ? '80%' : '100vw', 
+    minHeight: isMobile ? '300px' : '500px',  // Ensure the container has a minimum height
+  };
   const iconStyle = (icon) => ({
     margin: isMobile ? '5px' : '10px',  // Adjust margin for mobile
     fontSize: isMobile ? '2rem' : '3rem',
