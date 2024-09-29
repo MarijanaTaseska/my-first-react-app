@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -6,38 +6,53 @@ import colors from '../../images/colors.jpg'
 
 const InformationAboutMe = () => {
   const [hoveredIcon, setHoveredIcon] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 430);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 430);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
  const iconBox = {
     textAlign: 'center',
     margin: '20px',
     border:'2px solid black',
-    padding:'2%',
+    padding: isMobile ? '5%' : '2%', 
+    paddingBottom: isMobile ? '30%' : '0%', 
     backgroundImage: `url(${colors})`,  // Use the imported image
     backgroundSize: 'cover',   // Optional, depending on your design
-    backgroundPosition: 'bottom',
-   
+    backgroundPosition:'bottom', 
  }
   const iconStyle = (icon) => ({
-    margin: '10px',
-    fontSize: '3rem',
+    margin: isMobile ? '5px' : '10px',  // Adjust margin for mobile
+    fontSize: isMobile ? '2rem' : '3rem',
     color: hoveredIcon === icon ? '#ceec37' : '#272424ae', // Changes color on hover
     transition: 'transform 0.3s ease, color 0.3s ease',
     transform: hoveredIcon === icon ? 'scale(1.1)' : 'scale(1)', // Slightly enlarges on hover
-    padding: '20px',
+    padding: isMobile ? '10px' : '20px',
     border: '2px solid #333',
     borderRadius: '50%',  // Makes it a circle
-    width: '70px',        // Circle size
-    height: '70px',       // Circle size
+    width: isMobile ? '50px' : '70px',  // Smaller circle size for mobile
+    height: isMobile ? '50px' : '70px',      // Circle size
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
   });
 
   const iconContainerStyle = {
-    display: 'flex',
+    display: 'flex', 
     justifyContent: 'space-between',  // Spreads out the icons
     marginTop: '20px',
     maxWidth: '80%',
     margin: '0 auto',
+    gap: isMobile ? '15px' : '0', 
   };
 
   return (
