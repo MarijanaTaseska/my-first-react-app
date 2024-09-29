@@ -1,19 +1,35 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import landingPageImage from '../../images/project1.png';
 import project2Image from '../../images/project2.png';
 
 const ProjectSection = () => {
-  const sectionStyle = {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 430);
+
+  // Event listener to detect screen resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 430);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const sectionStyle = {  
     textAlign: 'center',
-    padding:'3%',
-    display:'flex',
-    margin:'40px',
-    height:'50vh',
-    justifyContent: 'space-evenly',
+    padding: isMobile ? '5%' : '3%',
+    display: 'flex',
+    flexDirection: isMobile ? 'column' : 'row', // Stack on mobile
+    margin: '20px',
+    height: 'auto',
+    justifyContent: isMobile ? 'center' : 'space-evenly',
   };
   
   const projectContainer = {
-    width: '45%',
+    width: isMobile ? '100%' : '45%', // Wider on mobile
     textAlign: 'center',
     padding: '10px',
     border: '1px solid gray',
@@ -21,22 +37,23 @@ const ProjectSection = () => {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    marginBottom: isMobile ? '20px' : '0', 
   };
   
   
   const imageStyle = {
     width: '100%',
-    height: '600px',
+    height: isMobile ? '250px' : '600px', // Smaller images on mobile
     backgroundSize: 'cover',
     backgroundPosition: 'top',
     marginBottom: '20px',
   };
 
   const techStackStyle = {
-    fontSize:'1.5rem',
+    fontSize: isMobile ? '1rem' : '1.5rem', // Smaller text on mobile
     fontStyle: 'italic',
     color: '#555',
-    height:'5px'
+    height: 'auto',
   };
 
 
@@ -45,8 +62,8 @@ const ProjectSection = () => {
     textDecoration: 'none',
     fontWeight: 'bold',
     transition: 'color 0.3s ease',
-    fontSize:'1.5rem',
-    padding:'1%',
+    fontSize: isMobile ? '1rem' : '1.5rem',
+    padding: '1%',
   };
 
   const linkHoverStyle = {
