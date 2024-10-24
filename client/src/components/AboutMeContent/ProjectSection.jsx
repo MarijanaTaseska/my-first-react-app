@@ -135,7 +135,8 @@ const ProjectSection = () => {
       </div>
     </div>
     <div style={{ textAlign: 'center', marginTop: '20px' }}>
-        <button onClick={toggleMoreProjects} style={{ padding: '10px 20px', fontSize: '1.2rem', cursor: 'pointer' }}>
+        <button onClick={toggleMoreProjects} 
+        style={{ padding: '20px 20px', fontSize: '1.5rem',fontStyle:'italic', cursor: 'pointer'}}>
           {showMoreProjects ? 'Hide More Projects' : 'Show More Projects'}
         </button>
       </div>

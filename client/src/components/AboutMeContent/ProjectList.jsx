@@ -33,12 +33,28 @@ const projects = [
   ];
 
 const ProjectList = () => {
+    const linkStyle = {
+        color: 'black',
+        textDecoration: 'none',
+        fontSize: '1.5rem',
+        fontWeight: 'bold',
+        transition: 'color 0.3s ease, transform 0.2s ease', // Add smooth hover transitions
+        margin: '10px 0',
+        display: 'inline-block',
+      };
+    
+      
     return (
-        <div>
-            <ul>
+        <div style={{textAlign:'center', marginTop:'20px',padding:''}}>
+            <ul style={{listStyleType:'none', padding:0}}> 
                 {projects.map((project,index) => (
-                <li key = {index}>
-                    <a href={project.link} target="blank" rel="noopener noreferrer">
+                <li key = {index} style={{marginBottom:'10px'}}>
+                    <a 
+                    href={project.link} 
+                    target="blank" 
+                    rel="noopener noreferrer"
+                    style={linkStyle}
+                    >
                         {project.name}
                     </a>
                 </li>
