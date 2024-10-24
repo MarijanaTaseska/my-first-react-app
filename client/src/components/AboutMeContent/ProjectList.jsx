@@ -36,6 +36,15 @@ const ProjectList = () => {
     return (
         <div>
             <h2>My Projects</h2>
+            <ul>
+                {projects.map((project,index) => (
+                <li key = {index}>
+                    <a href={project.link} target="blank" rel="noopener noreferrer">
+                        {project.name}
+                    </a>
+                </li>
+                )) }
+            </ul>
         </div>
     )
 }
