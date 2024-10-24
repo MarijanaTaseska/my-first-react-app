@@ -20,12 +20,13 @@ const ProjectSection = () => {
 
   const sectionStyle = {  
     textAlign: 'center',
-    padding: isMobile ? '5%' : '3%',
+    padding: isMobile ? '5%' : '0%',
     display: 'flex',
     flexDirection: isMobile ? 'column' : 'row', // Stack on mobile
     margin: '20px',
     height: 'auto',
-    justifyContent: isMobile ? 'center' : 'space-evenly',
+    width:'100%',
+    justifyContent: isMobile ? 'center' : 'space-between',
   };
   
   const projectContainer = {
