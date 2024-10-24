@@ -94,12 +94,12 @@ const ResumeComponent = () => {
         <div style={buttonSectionStyle}> 
         <ResumeButton
           text="View Resume"
-          href="/marijanaResume.pdf"
+          href="/fullStackResume.pdf"
           download={false}  // Open resume in new tab
         />
         <ResumeButton
           text="Download Resume"
-          href="/marijanaResume.pdf"
+          href="/fullStackResume.pdf"
           download={true}  // Automatically download resume
         />
       </div>
