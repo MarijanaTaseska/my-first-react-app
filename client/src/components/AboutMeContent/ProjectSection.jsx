@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import landingPageImage from '../../images/project1.png';
 import project2Image from '../../images/project2.png';
+import ProjectList from "./ProjectList";
 
 const ProjectSection = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 430);
@@ -128,6 +129,7 @@ const ProjectSection = () => {
         </a>
       </div>
     </div>
+    <ProjectList />
     </>
   );
 };
