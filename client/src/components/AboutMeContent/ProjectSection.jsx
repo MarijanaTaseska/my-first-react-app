@@ -5,6 +5,8 @@ import ProjectList from "./ProjectList";
 
 const ProjectSection = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 430);
+  const [showMoreProjects, setShowMoreProjects] = useState(false);
+
 
   // Event listener to detect screen resize
   useEffect(() => {
@@ -81,6 +83,9 @@ const ProjectSection = () => {
   const handleMouseLeave = () => {
     setHovered(null);
   };
+  const toggleMoreProjects = () => {
+    setShowMoreProjects(!showMoreProjects);
+  };
 
   return (<>
     <h2 style={{textAlign:'center', fontSize:'2.5rem', paddingTop:'3%'}}  id="projects">
@@ -129,7 +134,12 @@ const ProjectSection = () => {
         </a>
       </div>
     </div>
-    <ProjectList />
+    <div style={{ textAlign: 'center', marginTop: '20px' }}>
+        <button onClick={toggleMoreProjects} style={{ padding: '10px 20px', fontSize: '1.2rem', cursor: 'pointer' }}>
+          {showMoreProjects ? 'Hide More Projects' : 'Show More Projects'}
+        </button>
+      </div>
+      {showMoreProjects && <ProjectList />}
     </>
   );
 };
