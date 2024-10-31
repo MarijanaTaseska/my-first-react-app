@@ -23,17 +23,16 @@ const ProjectSection = () => {
 
   const sectionStyle = {  
     textAlign: 'center',
-    padding: isMobile ? '5%' : '0%',
+    padding: isMobile ? '5%' : '5%',
     display: 'flex',
-    flexDirection: isMobile ? 'column' : 'row', // Stack on mobile
-    margin: '20px',
+    flexDirection: isMobile ? 'column' : 'row', 
     height: 'auto',
     width:'100%',
     justifyContent: isMobile ? 'center' : 'space-between',
   };
   
   const projectContainer = {
-    width: isMobile ? '100%' : '45%', // Wider on mobile
+    width: isMobile ? '100%' : '80%', // Wider on mobile
     textAlign: 'center',
     padding: '10px',
     border: '1px solid gray',
