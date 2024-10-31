@@ -45,7 +45,7 @@ const ProjectList = () => {
     
       
     return (
-        <div style={{textAlign:'center', marginTop:'20px',padding:''}}>
+        <div style={{textAlign:'start', marginTop:'20px',padding:''}}>
             <ul style={{listStyleType:'none', padding:0}}> 
                 {projects.map((project,index) => (
                 <li key = {index} style={{marginBottom:'10px'}}>
