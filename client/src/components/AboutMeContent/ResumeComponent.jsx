@@ -29,10 +29,12 @@ const ResumeComponent = () => {
         color: 'black',  // Custom link color
         textDecoration: 'none',  // Remove underline
         fontWeight: 'bold',  // Make it stand out
-        margin:' 10px'
+        margin:' 10px',
+        transition: 'all 0.3s ease',  // Smooth transition
       };
       const linkHoverStyle = {
-        color: '#a1a4a1eb',  // Color change on hover
+        color: '#a1a4a1eb',
+        textShadow: '0px 0px 8px rgba(161, 164, 161, 0.8)',  // Glow effect on hover
       };
       const buttonSectionStyle = {
         textAlign:"center",
