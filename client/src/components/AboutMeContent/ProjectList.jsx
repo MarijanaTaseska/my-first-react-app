@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from "react";
 
+const ProjectList = () => {
 const projects = [
     {
       name: '* Authentication and Testing Sprint Challenge',
@@ -33,7 +34,7 @@ const projects = [
     // Add more projects here
   ];
 
-const ProjectList = () => {
+
     // const linkStyle = {
     //     color: 'blue',
     //     textDecoration: 'none',
@@ -61,25 +62,31 @@ const ProjectList = () => {
       transform: 'scale(1.05)',  // Slight zoom effect
       boxShadow: '0px 4px 15px rgba(0, 123, 255, 0.3)',  // Add a glow/shadow effect on hover
     };
-    const [isHovered, setIsHovered] = useState(false);
+    const [isHoveredIndex, setIsHoveredIndex] = useState(null);
 
     return (
         <div style={{textAlign:'start', marginTop:'20px',padding:''}}>
             <ul style={{listStyleType:'none', padding:0}}> 
-                {projects.map((project,index) => (
+                {projects.length > 0 ? (
+                  projects.map((project,index) => (
                 <li key = {index} style={{marginBottom:'10px'}}>
                     <a 
                     href={project.link} 
                     target="blank" 
                     rel="noopener noreferrer"
-                    style={{...linkStyle, ...(isHovered ? linkHoverStyle : {}) }}
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
+                    style={{
+                      ...linkStyle, 
+                      ...(isHoveredIndex === index ? linkHoverStyle : {}) }}
+                    onMouseEnter={() => setIsHoveredIndex(index)}
+                    onMouseLeave={() => setIsHoveredIndex(null)}
                     >
                         {project.name}
                     </a>
                 </li>
-                )) }
+                )) ) : (
+                <li>No projects available</li> 
+                ) 
+                }
             </ul>
         </div>
     )
